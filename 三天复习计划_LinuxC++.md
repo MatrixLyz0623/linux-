@@ -11,23 +11,23 @@
 ### 1. C++ 核心（占笔试 30% 以上，必考）
 - [x] **内存模型**：栈/堆/BSS/data/text；`new/delete` vs `malloc/free`；`placement new`
 - [x] **指针 & 引用**：野指针、悬空指针、`const T*` / `T* const` / `const T* const`
-- [ ] **左值/右值、移动语义**：`std::move`、`std::forward`、完美转发、RVO/NRVO
+- [x] **左值/右值、移动语义**：`std::move`、`std::forward`、完美转发、RVO/NRVO
 - [x] **智能指针**：`unique_ptr` / `shared_ptr` / `weak_ptr`，循环引用，`make_shared` 与 `shared_ptr` 控制块
-- [ ] **多态与虚函数**：vtable 布局、虚析构、纯虚、`override`/`final`、虚继承解决菱形
-- [ ] **模板**：函数模板/类模板/可变参模板、SFINAE、`enable_if`、概念（C++20 concepts）
-- [ ] **STL 容器底层**：`vector` 扩容、`deque` 分段、`map`(红黑树) vs `unordered_map`(哈希)、迭代器失效规则
-- [ ] **C++11/14/17 特性**：`auto`、lambda、`constexpr`、结构化绑定、`std::optional/variant/any`
+- [x] **多态与虚函数**：vtable 布局、虚析构、纯虚、`override`/`final`、虚继承解决菱形
+- [x] **模板**：函数模板/类模板/可变参模板、SFINAE、`enable_if`、概念（C++20 concepts）
+- [x] **STL 容器底层**：`vector` 扩容、`deque` 分段、`map`(红黑树) vs `unordered_map`(哈希)、迭代器失效规则
+- [x] **C++11/14/17 特性**：`auto`、lambda、`constexpr`、结构化绑定、`std::optional/variant/any`
 - [x] **对象生命周期**：构造/拷贝/移动/析构顺序、Rule of 0/3/5、`= default` / `= delete`
-- [ ] **类型转换**：`static_cast / dynamic_cast / const_cast / reinterpret_cast` 区别与场景
+- [x] **类型转换**：`static_cast / dynamic_cast / const_cast / reinterpret_cast` 区别与场景
 
 ### 2. 标准 C 库 & 系统调用（高频考点）
-- [ ] **文件 I/O**：`open / read / write / close / lseek / fcntl`，O_DIRECT / O_NONBLOCK / O_SYNC
-- [ ] **C 库 vs syscall**：`fread` 走 stdio 缓冲、`read` 直接陷内核；`fflush` vs `fsync`
-- [ ] **进程**：`fork / vfork / exec / wait / waitpid`，僵尸进程、孤儿进程、`SIGCHLD`
-- [ ] **信号**：可重入函数、`sigaction` vs `signal`、信号屏蔽 `sigprocmask`
-- [ ] **IPC**：管道、命名管道、消息队列、共享内存（`shm_open + mmap`）、信号量、Unix Domain Socket
-- [ ] **mmap**：匿名映射 vs 文件映射、`MAP_SHARED/PRIVATE`、与 `read/write` 性能差异（驱动暴露设备内存常用）
-- [ ] **错误处理**：`errno`、线程安全的 `strerror_r`
+- [x] **文件 I/O**：`open / read / write / close / lseek / fcntl`，O_DIRECT / O_NONBLOCK / O_SYNC
+- [x] **C 库 vs syscall**：`fread` 走 stdio 缓冲、`read` 直接陷内核；`fflush` vs `fsync`
+- [x] **进程**：`fork / vfork / exec / wait / waitpid`，僵尸进程、孤儿进程、`SIGCHLD`
+- [x] **信号**：可重入函数、`sigaction` vs `signal`、信号屏蔽 `sigprocmask`
+- [x] **IPC**：管道、命名管道、消息队列、共享内存（`shm_open + mmap`）、信号量、Unix Domain Socket
+- [x] **mmap**：匿名映射 vs 文件映射、`MAP_SHARED/PRIVATE`、与 `read/write` 性能差异（驱动暴露设备内存常用）
+- [x] **错误处理**：`errno`、线程安全的 `strerror_r`
 
 ### 3. 实操（动手 1.5h）
 - [ ] 写一个 `producer-consumer`：互斥锁 + 条件变量
@@ -45,30 +45,30 @@
 ## DAY 2 —— Linux 多线程 / 并发 / 内存管理 / 性能
 
 ### 1. 多线程编程（必考重灾区）
-- [ ] **pthread**：`pthread_create / join / detach`、属性、TLS（`pthread_key_*` / `thread_local`）
-- [ ] **同步原语**：mutex / rwlock / spinlock / 条件变量 / 信号量；何时用自旋锁
-- [ ] **C++11 并发**：`std::thread / mutex / lock_guard / unique_lock / condition_variable / future / promise / async / atomic`
-- [ ] **内存序**：`memory_order_relaxed / acquire / release / seq_cst`；happens-before
-- [ ] **无锁编程**：CAS、ABA 问题、无锁队列思路
-- [ ] **常见 bug**：死锁四条件 + 解除策略；活锁；优先级反转；伪共享（False Sharing，cache line 对齐 `alignas(64)`）
-- [ ] **线程池**：手写一个固定线程数 + 任务队列的线程池
+- [x] **pthread**：`pthread_create / join / detach`、属性、TLS（`pthread_key_*` / `thread_local`）
+- [x] **同步原语**：mutex / rwlock / spinlock / 条件变量 / 信号量；何时用自旋锁
+- [x] **C++11 并发**：`std::thread / mutex / lock_guard / unique_lock / condition_variable / future / promise / async / atomic`
+- [x] **内存序**：`memory_order_relaxed / acquire / release / seq_cst`；happens-before
+- [x] **无锁编程**：CAS、ABA 问题、无锁队列思路
+- [x] **常见 bug**：死锁四条件 + 解除策略；活锁；优先级反转；伪共享（False Sharing，cache line 对齐 `alignas(64)`）
+- [x] **线程池**：手写一个固定线程数 + 任务队列的线程池
 
 ### 2. Linux 内核 / 内存机制（驱动开发预备）
-- [ ] **虚拟内存**：页表（4 级）、TLB、缺页中断、写时复制（COW）
-- [ ] **进程/线程内核视角**：`task_struct`、`clone()` 标志位、CFS 调度器、`nice/priority`
-- [ ] **用户态 vs 内核态**：syscall 进入流程（int 0x80 / sysenter / syscall 指令）
-- [ ] **内存分配器**：glibc ptmalloc 的 arena / fastbin / tcache；jemalloc / tcmalloc 简介
-- [ ] **进程地址空间布局**：`/proc/<pid>/maps`、`vm_area_struct`
-- [ ] **DMA 与一致性**：cache coherent vs non-coherent DMA、`dma_alloc_coherent`、IOMMU
-- [ ] **PCIe 基础**（加分项必考）：Endpoint / Root Complex、BAR 空间、Config Space、MSI/MSI-X 中断、TLP 包
+- [x] **虚拟内存**：页表（4 级）、TLB、缺页中断、写时复制（COW）
+- [x] **进程/线程内核视角**：`task_struct`、`clone()` 标志位、CFS 调度器、`nice/priority`
+- [x] **用户态 vs 内核态**：syscall 进入流程（int 0x80 / sysenter / syscall 指令）
+- [x] **内存分配器**：glibc ptmalloc 的 arena / fastbin / tcache；jemalloc / tcmalloc 简介
+- [x] **进程地址空间布局**：`/proc/<pid>/maps`、`vm_area_struct`
+- [x] **DMA 与一致性**：cache coherent vs non-coherent DMA、`dma_alloc_coherent`、IOMMU
+- [x] **PCIe 基础**（加分项必考）：Endpoint / Root Complex、BAR 空间、Config Space、MSI/MSI-X 中断、TLP 包
 
 ### 3. 性能 & 调试工具（面试常问）
-- [ ] **GDB**：断点 / watchpoint / `bt` / `info threads` / coredump 分析（`ulimit -c unlimited`）
-- [ ] **perf**：`perf stat / record / report / top`，火焰图
-- [ ] **strace / ltrace**：跟踪系统调用 / 库调用
-- [ ] **lsof / netstat / ss / iostat / vmstat / mpstat / pidstat / top / htop**
-- [ ] **AddressSanitizer / ThreadSanitizer / UBSan**：`-fsanitize=address,thread,undefined`
-- [ ] **valgrind / massif / callgrind**
+- [x] **GDB**：断点 / watchpoint / `bt` / `info threads` / coredump 分析（`ulimit -c unlimited`）
+- [x] **perf**：`perf stat / record / report / top`，火焰图
+- [x] **strace / ltrace**：跟踪系统调用 / 库调用
+- [x] **lsof / netstat / ss / iostat / vmstat / mpstat / pidstat / top / htop**
+- [x] **AddressSanitizer / ThreadSanitizer / UBSan**：`-fsanitize=address,thread,undefined`
+- [x] **valgrind / massif / callgrind**
 
 ### 4. 实操（动手 2h）
 - [ ] 手写一个**线程池** + 提交一批计算任务 + benchmark
@@ -87,36 +87,36 @@
 ## DAY 3 —— Linux 驱动 / 异构计算 Runtime / 项目话术
 
 ### 1. Linux 字符设备驱动（JD 明确要求）
-- [ ] **内核模块**：`module_init / module_exit`、`MODULE_LICENSE`、`insmod / rmmod / lsmod / modinfo / dmesg`
-- [ ] **字符设备框架**：`alloc_chrdev_region` / `cdev_init` / `cdev_add` / `device_create`
-- [ ] **file_operations**：`open / release / read / write / ioctl / mmap / poll`
-- [ ] **用户/内核数据交换**：`copy_to_user / copy_from_user / get_user / put_user`
-- [ ] **内核内存**：`kmalloc`(物理连续, GFP_KERNEL/GFP_ATOMIC) / `vmalloc`(虚拟连续) / `kmem_cache` / 伙伴系统
-- [ ] **同步**：内核 spinlock、mutex、semaphore、RCU、原子操作
-- [ ] **中断处理**：上半部 (top half) + 下半部 (softirq / tasklet / workqueue)；request_irq；threaded irq
-- [ ] **PCIe 驱动框架**：`pci_driver`、`probe/remove`、`pci_enable_device`、`pci_request_regions`、`pci_iomap`、`ioread32/iowrite32`、DMA mapping API
-- [ ] **mmap 把设备 BAR 暴露给用户态**（这是 GPU/AI 卡 Runtime 的关键路径）
-- [ ] **UIO / VFIO**：用户态驱动框架（vLLM、DPDK 用 VFIO + IOMMU；类 CUDA Runtime 也常走 VFIO）
+- [x] **内核模块**：`module_init / module_exit`、`MODULE_LICENSE`、`insmod / rmmod / lsmod / modinfo / dmesg`
+- [x] **字符设备框架**：`alloc_chrdev_region` / `cdev_init` / `cdev_add` / `device_create`
+- [x] **file_operations**：`open / release / read / write / ioctl / mmap / poll`
+- [x] **用户/内核数据交换**：`copy_to_user / copy_from_user / get_user / put_user`
+- [x] **内核内存**：`kmalloc`(物理连续, GFP_KERNEL/GFP_ATOMIC) / `vmalloc`(虚拟连续) / `kmem_cache` / 伙伴系统
+- [x] **同步**：内核 spinlock、mutex、semaphore、RCU、原子操作
+- [x] **中断处理**：上半部 (top half) + 下半部 (softirq / tasklet / workqueue)；request_irq；threaded irq
+- [x] **PCIe 驱动框架**：`pci_driver`、`probe/remove`、`pci_enable_device`、`pci_request_regions`、`pci_iomap`、`ioread32/iowrite32`、DMA mapping API
+- [x] **mmap 把设备 BAR 暴露给用户态**（这是 GPU/AI 卡 Runtime 的关键路径）
+- [x] **UIO / VFIO**：用户态驱动框架（vLLM、DPDK 用 VFIO + IOMMU；类 CUDA Runtime 也常走 VFIO）
 
 ### 2. 异构计算 / GPU / CUDA-like Runtime（核心加分项）
-- [ ] **CUDA 编程模型**：Host / Device、Grid / Block / Thread、SM、Warp(32 线程)、SIMT
-- [ ] **CUDA 内存层级**：Global / Shared / Constant / Texture / Register / Local；coalesced access
-- [ ] **CUDA Stream / Event**：异步执行、并发、依赖关系
-- [ ] **Runtime API vs Driver API**：`cudaMalloc / cudaMemcpy / cudaLaunchKernel` vs `cuMemAlloc / cuLaunchKernel`
-- [ ] **异构 Runtime 关心的事**：
+- [x] **CUDA 编程模型**：Host / Device、Grid / Block / Thread、SM、Warp(32 线程)、SIMT
+- [x] **CUDA 内存层级**：Global / Shared / Constant / Texture / Register / Local；coalesced access
+- [x] **CUDA Stream / Event**：异步执行、并发、依赖关系
+- [x] **Runtime API vs Driver API**：`cudaMalloc / cudaMemcpy / cudaLaunchKernel` vs `cuMemAlloc / cuLaunchKernel`
+- [x] **异构 Runtime 关心的事**：
   - 设备发现与初始化（probe PCIe 设备、加载 firmware）
   - 设备内存管理（buddy / slab，VA↔PA 映射，UVA / UVM）
   - 任务调度：command queue / ring buffer / doorbell / fence
   - 同步原语：event、stream、semaphore、interrupt 通知用户态（eventfd / epoll）
   - Host↔Device 通信：DMA、P2P、零拷贝、pinned memory
-- [ ] **AI 编译栈**（加分项）：MLIR / LLVM IR、PyTorch dispatcher、vLLM 的 PagedAttention / KV Cache、TVM、Triton
-- [ ] **类 CUDA 友商生态**：ROCm/HIP、SYCL/oneAPI、寒武纪 CNRT、华为 CANN/ACL、沐曦 MXMACA、燧原 TopsRider
+- [x] **AI 编译栈**（加分项）：MLIR / LLVM IR、PyTorch dispatcher、vLLM 的 PagedAttention / KV Cache、TVM、Triton
+- [x] **类 CUDA 友商生态**：ROCm/HIP、SYCL/oneAPI、寒武纪 CNRT、华为 CANN/ACL、沐曦 MXMACA、燧原 TopsRider
 
 ### 3. 网络（部分笔试会考）
-- [ ] TCP 三次握手 / 四次挥手、TIME_WAIT、CLOSE_WAIT
-- [ ] `select / poll / epoll`（LT vs ET）；`epoll` 内部红黑树 + 就绪链表
-- [ ] Reactor / Proactor 模型；惊群问题；`SO_REUSEPORT`
-- [ ] HTTP/HTTPS 基础
+- [x] TCP 三次握手 / 四次挥手、TIME_WAIT、CLOSE_WAIT
+- [x] `select / poll / epoll`（LT vs ET）；`epoll` 内部红黑树 + 就绪链表
+- [x] Reactor / Proactor 模型；惊群问题；`SO_REUSEPORT`
+- [x] HTTP/HTTPS 基础
 
 ### 4. 项目话术与简历准备（晚上 1h）
 - [ ] 用 STAR 法则准备 2~3 个项目，每个突出：
